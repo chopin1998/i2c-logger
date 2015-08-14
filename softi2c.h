@@ -12,6 +12,7 @@
 
 typedef struct {
     unsigned char in_frame;
+    unsigned char byte_count;
 } SWIIC_t;
 
 volatile SWIIC_t SWIIC;

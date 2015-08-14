@@ -13,6 +13,7 @@ ISR (SCK_vect)
     }
 }
 
+/* todo: need handle ack/nak next */
 ISR (SDA_vect)
 {
     if (SWIIC_PORT.IN & SCK_PIN)
@@ -37,6 +38,7 @@ ISR (SDA_vect)
 void swiic_init(void)
 {
     SWIIC.in_frame = 0;
+    SWIIC.byte_count = 0;
     
     SWIIC_PORT.DIRCLR = SCK_PIN | SDA_PIN;
 
